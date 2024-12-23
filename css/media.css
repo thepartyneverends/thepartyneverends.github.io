@@ -1,0 +1,19 @@
+@media ( max-width:1080px){
+
+    .header-rom{
+    
+    column-gap: 30px;
+    }
+    .header-rom img{
+   
+    max-width: 300px;
+  }
+  h1{
+    font-size: 52px;
+  }
+  }
+  @media ( max-width:767px){
+  .messengers{
+    flex-wrap: wrap;
+  }
+  }
