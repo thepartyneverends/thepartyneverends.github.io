@@ -4,23 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/styler.css">
-  <title>Document</title>
+  <script src="scripts/script.js"></script>
+  <title>Портфолио</title>
 </head>
 <header>
-  <div class="timer">
-    <div class="timer__item timer__days">00</div>
-    <div class="separator">:</div>
-    <div class="timer__item timer__hours">00</div>
-    <div class="separator">:</div>
-    <div class="timer__item timer__minutes">00</div>
-    <div class="separator">:</div>
-    <div class="timer__item timer__seconds">00</div>
-  </div>
+  <nav>
+  <div class="nav-menu">  
+        <a href="#">ГЛАВНАЯ</a>  
+        <a href="#main-container">ПОРТФОЛИО</a>  
+        <a href="#contacts">КОНТАКТЫ</a>  
+  </div> 
+</nav>
   <div class="container-head">
     <img src="img/project/098829d6-b216-5f31-8daa-356237b68eed.png" alt="photo-laptop" width="600px">
     <div class="container-side">
-    <h2 class="name">Устименко <br>Сергей</h2>
-    <p class="student">Студент группы ПИвУКИС-22, программист</p>
+      <p class="timer-header">ДО КОНЦА ГОДА ОСТАЛОСЬ: </p>
+      <div class="timer">
+        <div class="timer__item timer__days">00</div>
+        <div class="separator">:</div>
+        <div class="timer__item timer__hours">00</div>
+        <div class="separator">:</div>
+        <div class="timer__item timer__minutes">00</div>
+        <div class="separator">:</div>
+        <div class="timer__item timer__seconds">00</div>
+      </div>
+    <h2 class="name">Устименко Сергей</h2>
+    <p class="student">студент группы ПИвУКИС-22, программист</p>
     <div class="container-head-buttons">
       <a href="#main-container">
       <button type="button" class="buttons-top"><p class="button-top-text">Портфолио</p></button>
@@ -35,15 +44,15 @@
 <body>
 <div class="main-container" id="main-container">
   <h1 class="text-portfolio">Портфолио</h1>
-  <a href="https://hoff.ru">
+  <a href="furniture.html">
   <img class="photo-sites" src="img/project/img1.png" alt="photo-furniture" width="60%">
   <h3 class="sites-sign">Сайт магазина мебели</h3>
 </a>
-<a href="https://coral.ru">
+<a href="agency.html">
   <img class="photo-sites" src="img/project/img2.png" alt="photo-turism" width="60%">
   <h3 class="sites-sign">Сайт туристического агентства</h3>
 </a>
-<a href="https://cian.ru">
+<a href="residental.html">
   <img class="photo-sites" src="img/project/img3.png" alt="photo-zhk" width="60%">
   <h3 class="sites-sign">Сайт жилого комплекса</h3>
 </a>
@@ -84,43 +93,4 @@
   </div>
 </footer>
 
-<script>document.addEventListener('DOMContentLoaded', () => {
-  const deadline = new Date('2024-12-31T23:59:59');
-  
-  const elDays = document.querySelector('.timer__days');
-  const elHours = document.querySelector('.timer__hours');
-  const elMinutes = document.querySelector('.timer__minutes');
-  const elSeconds = document.querySelector('.timer__seconds');
-  
-  const declensionNum = (num, words) => {
-    return words[(num % 100 > 4 && num % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][num % 10 < 5 ? num % 10 : 5]];
-  };
-
-  const updateTimer = () => {
-    const now = new Date();
-    const diff = Math.max(0, deadline - now);
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
-
-    elDays.textContent = String(days).padStart(2, '0');
-    elHours.textContent = String(hours).padStart(2, '0');
-    elMinutes.textContent = String(minutes).padStart(2, '0');
-    elSeconds.textContent = String(seconds).padStart(2, '0');
-
-    elDays.dataset.title = declensionNum(days, ['день', 'дня', 'дней']);
-    elHours.dataset.title = declensionNum(hours, ['час', 'часа', 'часов']);
-    elMinutes.dataset.title = declensionNum(minutes, ['минута', 'минуты', 'минут']);
-    elSeconds.dataset.title = declensionNum(seconds, ['секунда', 'секунды', 'секунд']);
-
-    if (diff === 0) {
-      clearInterval(timerId);
-    }
-  };
-
-  updateTimer();
-  const timerId = setInterval(updateTimer, 1000);
-});</script>
 </html>
