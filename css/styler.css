@@ -176,6 +176,9 @@ header {
     padding: 50px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 50px;
+    animation: swing;
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 
 .text-contacts-footer {
